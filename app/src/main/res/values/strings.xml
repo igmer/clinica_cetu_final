@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ClinicaCETU</string>
+    <string name="abierto">Abrir</string>
+    <string name="cerrado">Cerrar</string>
+</resources>

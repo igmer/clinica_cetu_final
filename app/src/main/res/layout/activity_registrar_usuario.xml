@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.edwin.clinicacetu.RegistrarUsuario"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    >
+
+
+    <ProgressBar
+        android:id="@+id/registrar_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/registrar_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp">
+
+            <EditText
+                android:id="@+id/edtNombres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+
+                android:hint="Nombres"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edtDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Dirección de Residencia"
+                android:inputType="textPostalAddress" />
+
+
+            <EditText
+                android:id="@+id/edtFechaNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Fecha de Nacimiento"
+                android:drawableLeft="@mipmap/ic_today_black_24dp"
+                android:inputType="date" />
+
+
+            <EditText
+                android:id="@+id/edtCelular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Celular"
+                android:inputType="number"
+                android:drawableLeft="@mipmap/ic_settings_cell_black_24dp"
+                android:maxLength="8" />
+
+            <EditText
+                android:id="@+id/edtCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Correo Electrónico"
+                android:drawableLeft="@mipmap/ic_email_black_24dp"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/edtUsuarioR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Usuario"
+                android:drawableLeft="@mipmap/ic_account_circle_black_24dp"
+                />
+
+            <EditText
+                android:id="@+id/edtContrasenia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:drawableLeft="@mipmap/ic_speaker_notes_black_24dp"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/edtConfirmContrasenia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Confirmar Contraseña"
+                android:drawableLeft="@mipmap/ic_speaker_notes_black_24dp"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/btnRegistroUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:onClick="onclickRegistrar"
+                android:text="Guardar Datos"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

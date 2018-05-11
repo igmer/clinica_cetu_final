@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+      android:id="@+id/opc_nueva_cita"
+        android:title="Nueva Cita Clínica"
+        android:icon="@drawable/ic_nueva_cita"
+       />
+    <item
+        android:id="@+id/opc_citas_aprobadas"
+        android:title="Citas Aprobadas"
+        android:icon="@drawable/ic_aprobadas"
+        />
+    <item
+        android:id="@+id/opc_historial"
+        android:title="Historial Clínico"
+        android:icon="@drawable/ic_historial"
+        />
+
+    <item
+        android:id="@+id/opc_info_paciente"
+        android:title="Información del Paciente"
+        android:icon="@drawable/ic_info_paciente"
+        />
+</menu>

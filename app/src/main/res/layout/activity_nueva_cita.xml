@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.edwin.clinicacetu.NuevaCita">
+
+    <TextView
+        android:id="@+id/tvMedico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Seleccion un Médico:" />
+
+    <Spinner
+        android:id="@+id/spMedico"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:spinnerMode="dropdown" />
+
+    <EditText
+        android:id="@+id/edtFechaCita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="Fecha a Reservar"
+        android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/edtHoraCita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:drawableLeft="@android:drawable/ic_lock_idle_alarm"
+        android:hint=" Hora a Reservar"
+        />
+
+    <TextView
+        android:id="@+id/tvComentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Comentario:" />
+
+    <EditText
+        android:id="@+id/edtComentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Comentario Cita"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/btnRegistrarCita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:onClick="onclickRegistrarCita"
+        android:text="Registrar Cita"
+        android:textColor="@android:color/white" />
+</LinearLayout>
