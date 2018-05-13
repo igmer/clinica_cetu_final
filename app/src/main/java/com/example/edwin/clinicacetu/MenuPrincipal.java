@@ -71,6 +71,12 @@ implements NavigationView.OnNavigationItemSelectedListener {
             startActivity(iEstadoCita);
 
         }
+        if(id == R.id.opc_historial){
+            Intent objHistorialClinico = new Intent(getApplicationContext(), historialMedico.class);
+            startActivity(objHistorialClinico);
+            Toast.makeText(getApplicationContext(),"Bienvenido a su Historial clinico",Toast.LENGTH_LONG).show();
+
+        }
         return true;
     }
 

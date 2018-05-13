@@ -63,6 +63,8 @@ public class ClinicaDB extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO citas_medicas VALUES (3,5,1,'2018-04-30 10:00:00','sintomas FIEBRE','',2)");
         db.execSQL("INSERT INTO consultaMedica VALUES (1,1,3.1,10.3,'Diarrea','Simeticona 1 tab c/12 hrs')");
         db.execSQL("INSERT INTO consultaMedica VALUES (2,1,3.1,10.3,'Gripe','Paracetamol 1 tab. c/8 hrs')");
+        db.execSQL("INSERT INTO consultaMedica VALUES (3,1,3.1,10.3,'Desnutricion','Dieta, Carbohidrato, Proteinas y Hierro')");
+        db.execSQL("INSERT INTO consultaMedica VALUES (4,1,3.1,10.3,'Sospecha de Chik','LOA + Paracetamon')");
     }
 
     public Integer validaIngresousuario(String elUsuario, String laClave){

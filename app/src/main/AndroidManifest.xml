@@ -19,7 +19,8 @@
         <activity android:name=".MenuPrincipal" />
         <activity android:name=".RegistrarUsuario" />
         <activity android:name=".NuevaCita" />
-        <activity android:name=".EstadosCitas"></activity>
+        <activity android:name=".EstadosCitas" />
+        <activity android:name=".historialMedico"></activity>
     </application>
 
 </manifest>
