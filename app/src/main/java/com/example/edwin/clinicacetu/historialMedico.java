@@ -1,16 +1,21 @@
 package com.example.edwin.clinicacetu;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import Modelos.Usuarios;
+import Negocios.ConsultaBL;
 
 public class historialMedico extends AppCompatActivity {
     ListView lwHistoral;
-    ArrayList listado;
+    LinkedList listado;
+    ConsultaBL objConsulta;
+    Usuarios objUsuario;
+    LinkedList listaSource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +34,8 @@ public class historialMedico extends AppCompatActivity {
         //lwHistoral.setAdapter(adapter);
 
     }
-    public ArrayList<String> listaPersonas(){
+    public LinkedList listaPersonas(){
+        /*
         ArrayList<String> datos = new ArrayList<>();
         ClinicaDB helper = new ClinicaDB(getApplicationContext());
         SQLiteDatabase db = helper.getReadableDatabase();
@@ -43,7 +49,11 @@ public class historialMedico extends AppCompatActivity {
         }
         db.close();
 
-        return datos;
+        return datos;*/
+        ConsultaBL objConsulta =new ConsultaBL(getApplicationContext());
+        listaSource = objConsulta.getConsultaUsuario();
+        return  listaSource;
+
 
 
     }

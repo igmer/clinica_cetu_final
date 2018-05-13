@@ -24,6 +24,7 @@ public class EstadosCitas extends AppCompatActivity {
 
         listaEstado=(ListView)findViewById(R.id.lstEstados);
         objUsuario =(Usuarios)getIntent().getExtras().getSerializable("DatosUsuario");
+
         Citas_Medicas_BL objEstadosCitas =new Citas_Medicas_BL(getApplicationContext());
         listaSource = objEstadosCitas.getEstadosCitasUsuario(objUsuario.getID());
        // setListAdapter(new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listaSource));

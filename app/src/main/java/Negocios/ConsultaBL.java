@@ -19,5 +19,9 @@ public class ConsultaBL {
 
         objConsultasDL = new ConsultaDL(cont);
     }
-    public LinkedList getByID(){ return objConsultasDL.getByID(objConsultas); }
+    //public LinkedList getByID(){ return objConsultasDL.getByID(objConsultas); }
+
+    public LinkedList getConsultaUsuario(){
+        return objConsultasDL.getConsultaUsuario();
+    }
 }

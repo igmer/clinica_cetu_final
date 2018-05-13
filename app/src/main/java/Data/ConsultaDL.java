@@ -27,7 +27,7 @@ public class ConsultaDL {
 
 
 
-    public LinkedList getByID(Consultas objConsultas) {
+    /*public LinkedList getByID(Consultas objConsultas) {
         Cursor lCur = database.rawQuery("SELECT id, nombre, direccion, telefono, FechaNac, email, usuario, password, activo FROM Usuarios where email='" + objConsultas.getId_cita() + "'" ,null);
 
         LinkedList objListUsuarios = new LinkedList();
@@ -48,5 +48,32 @@ public class ConsultaDL {
         }
         database.close();
         return objListUsuarios;
+    }*/
+    public LinkedList getConsultaUsuario(){
+        database = openHelper.getWritableDatabase();
+
+        String strSql ="SELECT * FROM consultaMedica ";
+        String lstrDatos="";
+
+
+        Cursor lCur = database.rawQuery(strSql ,null);
+
+        LinkedList objListCitas = new LinkedList();
+        while(lCur.moveToNext()){
+
+            lstrDatos ="Usuario: " + lCur.getString(0) + "\n" ;
+            lstrDatos += "Fecha y Hora de Cita: "+ lCur.getString(1) + "\n" ;
+            lstrDatos +="Médico: "+ lCur.getString(2) + "\n" ;
+            lstrDatos +="Padecimiento: "+ lCur.getString(3) + "\n" ;
+            lstrDatos +="Estado de la Cita: "+ lCur.getString(4) + "\n" ;
+            lstrDatos +="Comentario Aprobación: "+ lCur.getString(5) + "\n" ;
+
+
+            objListCitas.add(lstrDatos);
+        }
+        database.close();
+        return objListCitas;
     }
+
+
 }
