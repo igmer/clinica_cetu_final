@@ -21,8 +21,6 @@ public class ConsultaDL {
     public ConsultaDL(Context context){
         openHelper = new ClinicaDB(context);
         database = openHelper.getWritableDatabase();
-
-
     }
 
 
@@ -54,21 +52,15 @@ public class ConsultaDL {
 
         String strSql ="SELECT * FROM consultaMedica ";
         String lstrDatos="";
-
-
         Cursor lCur = database.rawQuery(strSql ,null);
 
         LinkedList objListCitas = new LinkedList();
         while(lCur.moveToNext()){
-
-            lstrDatos ="Usuario: " + lCur.getString(0) + "\n" ;
-            lstrDatos += "Fecha y Hora de Cita: "+ lCur.getString(1) + "\n" ;
-            lstrDatos +="Médico: "+ lCur.getString(2) + "\n" ;
-            lstrDatos +="Padecimiento: "+ lCur.getString(3) + "\n" ;
-            lstrDatos +="Estado de la Cita: "+ lCur.getString(4) + "\n" ;
-            lstrDatos +="Comentario Aprobación: "+ lCur.getString(5) + "\n" ;
-
-
+            lstrDatos ="Peso: "+ lCur.getString(2)+"Kg." + "\n" ;
+            lstrDatos +="Talla: "+ lCur.getString(3)+"Cm" + "\n" ;
+            lstrDatos +="Diagnóstico: "+ lCur.getString(4) + "\n" ;
+            lstrDatos +="Tratamiento: "+ lCur.getString(5) + "\n" ;
+            lstrDatos +="Fecha Consulta: "+ lCur.getString(6) + "\n" ;
             objListCitas.add(lstrDatos);
         }
         database.close();

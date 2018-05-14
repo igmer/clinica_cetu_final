@@ -22,7 +22,8 @@ public class ClinicaDB extends SQLiteOpenHelper{
             + "id_empleado_medico INTEGER, id_usuario INTEGER, fecha_cita DATETIME DEFAULT CURRENT_TIMESTAM, comentario TEXT, comentario_rechazo TEXT,id_estado_cita INTEGER, "
             + " FOREIGN KEY(id_usuario) REFERENCES Usuarios(id))";
 
-    String sqlCretaeConsultaMedica="create table consultaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT, idCita integer NOT NULL, peso DOUBLE, talla DOUBLE, diagnostico TEXT, tratamiento TEXT)";
+    String sqlCretaeConsultaMedica="create table consultaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT, idCita integer NOT NULL, peso DOUBLE, talla DOUBLE, diagnostico TEXT," +
+            " tratamiento TEXT, fecha TEXT, FOREIGN KEY(idCita)REFERENCES citas_medicas(id))";
 
     public ClinicaDB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -58,13 +59,14 @@ public class ClinicaDB extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO Usuarios VALUES (5,'Juan Jose Tovar','','','1968-01-01 10:00:00','medico@hospital.com','','456',1,3)");
         db.execSQL("INSERT INTO Usuarios VALUES (6,'Satigo Lopez','','','1958-01-01 10:00:00','medido2@hospital.com','','456',1,3)");
 
+
         db.execSQL("INSERT INTO citas_medicas VALUES (1,5,1,'2018-04-01 10:00:00','DOLOR DE ESTOMAGO FUERTE','',0)");
         db.execSQL("INSERT INTO citas_medicas VALUES (2,6,2,'2018-04-30 10:00:00','sintomas de chick','',1)");
         db.execSQL("INSERT INTO citas_medicas VALUES (3,5,1,'2018-04-30 10:00:00','sintomas FIEBRE','',2)");
-        db.execSQL("INSERT INTO consultaMedica VALUES (1,1,3.1,10.3,'Diarrea','Simeticona 1 tab c/12 hrs')");
-        db.execSQL("INSERT INTO consultaMedica VALUES (2,1,3.1,10.3,'Gripe','Paracetamol 1 tab. c/8 hrs')");
-        db.execSQL("INSERT INTO consultaMedica VALUES (3,1,3.1,10.3,'Desnutricion','Dieta, Carbohidrato, Proteinas y Hierro')");
-        db.execSQL("INSERT INTO consultaMedica VALUES (4,1,3.1,10.3,'Sospecha de Chik','LOA + Paracetamon')");
+        db.execSQL("INSERT INTO consultaMedica VALUES (1,1,53.1,170.3,'Diarrea','Simeticona 1 tab c/12 hrs','2018-05-01 09:00:00')");
+        db.execSQL("INSERT INTO consultaMedica VALUES (2,2,53.5,170.3,'Gripe','Paracetamol 1 tab. c/8 hrs','2018-05-01 09:00:00')");
+        db.execSQL("INSERT INTO consultaMedica VALUES (3,3,53.9,170.3,'Desnutricion','Dieta, Carbohidrato, Proteinas y Hierro','2018-05-01 09:00:00')");
+        db.execSQL("INSERT INTO consultaMedica VALUES (4,3,52.1,170.3,'Sospecha de Chik','LOA + Paracetamon','2018-05-01 09:00:00')");
     }
 
     public Integer validaIngresousuario(String elUsuario, String laClave){
