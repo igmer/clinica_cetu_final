@@ -77,6 +77,12 @@ implements NavigationView.OnNavigationItemSelectedListener {
             Toast.makeText(getApplicationContext(),"Bienvenido a su Historial clinico",Toast.LENGTH_LONG).show();
 
         }
+        if(id == R.id.opc_info_paciente){
+            Intent objInfoUsuario = new Intent(getApplicationContext(), InformacionUsuario.class);
+            startActivity(objInfoUsuario);
+            Toast.makeText(getApplicationContext(),"Bienvenido a su Cuenta",Toast.LENGTH_LONG).show();
+
+        }
         return true;
     }
 

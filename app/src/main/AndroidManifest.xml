@@ -20,7 +20,8 @@
         <activity android:name=".RegistrarUsuario" />
         <activity android:name=".NuevaCita" />
         <activity android:name=".EstadosCitas" />
-        <activity android:name=".historialMedico"></activity>
+        <activity android:name=".historialMedico" />
+        <activity android:name=".InformacionUsuario"></activity>
     </application>
 
 </manifest>
