@@ -61,6 +61,7 @@ ClinicaDB data;
                         Toast.makeText(getApplicationContext(),"Bienvenido",Toast.LENGTH_LONG).show();
                         Intent principal= new Intent(getApplicationContext(),MenuPrincipal.class);
                         principal.putExtra("DatosUsuario",objUsuario);
+                       // final  String usuario = edtusuario.getText().toString().trim();
                         startActivity(principal);
                     }
                 }
