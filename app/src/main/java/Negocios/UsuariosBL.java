@@ -41,7 +41,9 @@ public class UsuariosBL {
 
     public LinkedList getByID(){ return objUsuarioDL.getByID(objUsuario); }
     public LinkedList getByUSUARIO(){ return objUsuarioDL.getByUsuario(objUsuario); }
- /*   public int actualizarPassword(byte[] password){
-        return objUsuarioDL.actualizarPassword(password,objUsuario);
-    }  */
+
+
+    public LinkedList getInfoUsuario(int IdUsuario){
+        return objUsuarioDL.getInfoUsuario(IdUsuario);
+    }
 }

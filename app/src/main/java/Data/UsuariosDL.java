@@ -133,21 +133,32 @@ public class UsuariosDL {
         return objListUsuarios;
     }
 
- /*   public int actualizarPassword(String password,Usuarios pUsuario){
+    public LinkedList getInfoUsuario(int IdUsuario){
         database = openHelper.getWritableDatabase();
-        database.execSQL("DELETE FROM Usuario WHERE CorreoElectronico='"+ pUsuario.getCorreoElectronico() +"'");
 
-        int idUsuario;
-        ContentValues objParam;
-        objParam= new ContentValues();
-        objParam.put("CorreoElectronico",pUsuario.getCorreoElectronico());
-        objParam.put("TipoUsuario",pUsuario.getTipoUsuario());
-        objParam.put("Password",password);
-        objParam.put("Estado","ACT");
-        idUsuario =(int) database.insert("Usuario",null,objParam);
+        String strSql ="Select nombre, telefono, direccion, fechaNac, email from usuarios where id="+ IdUsuario
+                ;
 
+        String lstrDatos="";
+
+
+
+
+        Cursor lCur = database.rawQuery(strSql ,null);
+
+        LinkedList objListCitas = new LinkedList();
+        while(lCur.moveToNext()){
+
+            lstrDatos ="Nombre: " + lCur.getString(0) + "\n" ;
+            lstrDatos += "Telefono: "+ lCur.getString(1) + "\n" ;
+            lstrDatos +="Direccion: "+ lCur.getString(2) + "\n" ;
+            lstrDatos +="Fecha de Nacimiento: "+ lCur.getString(3) + "\n" ;
+            lstrDatos +="Email: "+ lCur.getString(4) + "\n" ;
+
+            objListCitas.add(lstrDatos);
+        }
         database.close();
-        return  idUsuario;
-    }*/
+        return objListCitas;
+    }
 
 }

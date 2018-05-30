@@ -79,6 +79,7 @@ implements NavigationView.OnNavigationItemSelectedListener {
         }
         if(id == R.id.opc_info_paciente){
             Intent objInfoUsuario = new Intent(getApplicationContext(), InformacionUsuario.class);
+            objInfoUsuario.putExtra("DatosUsuario", objUsuario);
             startActivity(objInfoUsuario);
             Toast.makeText(getApplicationContext(),"Bienvenido a su Cuenta",Toast.LENGTH_LONG).show();
 
