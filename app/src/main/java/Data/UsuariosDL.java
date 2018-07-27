@@ -140,10 +140,6 @@ public class UsuariosDL {
                 ;
 
         String lstrDatos="";
-
-
-
-
         Cursor lCur = database.rawQuery(strSql ,null);
 
         LinkedList objListCitas = new LinkedList();
